@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ověření hesla</title>
+  <style>
+    /* Styly pro vizuální vzhled */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+      text-align: center;
+    }
+    input[type="password"] {
+      padding: 8px;
+      font-size: 16px;
+    }
+    input[type="submit"] {
+      padding: 8px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Zadejte heslo pro získání indicie k první lokaci výletu</h1>
+  <form onsubmit="return checkPassword()">
+    <label for="password">Heslo:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Vstoupit">
+  </form>
+
+  <script>
+    function checkPassword() {
+      var enteredPassword = document.getElementById('password').value;
+      // Zde můžete provést ověření hesla (například porovnání s pevně stanoveným heslem)
+      if (enteredPassword === 'heslojeblazim') {
+        alert('Heslo je správné. Přesměrování na další stránku.');
+        // Zde provádíme přesměrování na další stránku:
+        window.location.href = 'https://heathered-margin-b3a.notion.site/1-kol-651468fb12404ab29bf6fd32ecfa28e9?pvs=4';
+        return false; // Zabránění odeslání formuláře (pro účely ukázky)
+      } else {
+        alert('Nesprávné heslo!');
+        return false; // Zabránění odeslání formuláře
+      }
+    }
+  </script>
+</body>
+</html>
